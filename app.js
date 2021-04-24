@@ -180,37 +180,11 @@ const promptProject = (portfolioData) => {
     .catch((eer) => console.log(eer));
 };
 
-// promptUser()
-//   //   .then(promptProject)
-//   .then((portfolioData) => {
-//     // const pageHTML = generatePage(portfolioData);
-//     const pageHTML = generatePage(mockData);
-
-//     fs.writeFile("./dist/index.html", pageHTML, (err) => {
-//       if (err) {
-//         console.log(err);
-//         return;
-//       }
-//       console.log(
-//         "Page created! Check out index.html in this directory to see it!"
-//       );
-
-//       fs.copyFile("./src/style.css", "./dist/style.css", (err) => {
-//         if (err) {
-//           console.log(err);
-//           return;
-//         }
-//         console.log("Style sheet copied successfully!");
-//       });
-//     });
-//     //   console.log("Portfolio complete! Check out index.html to see the output!");
-//     // });
-//   });
-
 promptUser()
   //   .then(promptProject)
   .then((portfolioData) => {
-    return generatePage(mockData);
+    return generatePage(portfolioData);
+    // return generatePage(mockData);
   })
   .then((pageHTML) => {
     return writeFile(pageHTML);
